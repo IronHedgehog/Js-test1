@@ -18,3 +18,19 @@ const matilda = new Person('Matilda', 2017);
 const jack = new Person('Jack', 1975);
 console.log(matilda, jack);
 console.log(jonas instanceof Person);
+
+// Prototypes
+console.log(Person.prototype);
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+jonas.calcAge();
+matilda.calcAge();
+
+console.log(jonas.__proto__);
+console.log(jonas.__proto__ === Person.prototype);
+
+console.log(Person.prototype.isPrototype0f(jonas));
+console.log(Person.prototype.isPrototype0f(matilda));
+console.log(Person.prototype.isPrototype0f(Person));
